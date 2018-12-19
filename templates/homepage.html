@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Flask Parent Template</title>
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+    <!-- Jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7"></script>
+    <script src="static/js/unbabel.js"></script>
+    <script src="static/js/cron.js"></script>
+</head>
+<body>
+<div class="page">
+    <h3 align="center"> Unbabel Translator</h3>
+    <div class="translator">
+        <form method="post" action="/">
+            <div class="row" id="wrap">
+                <div id="left" class="column" style="background-color:#aaa;">
+                    <h2>English</h2>
+                    <textarea name="source-text" class="text-input" cols="50" autofocus></textarea>
+
+                </div>
+                <div id="right" class="column" style="background-color:#bbb;display:none">
+                    <h2>Spanish</h2>
+                    <textarea id="destination-text" name="destination-text" class="text-input" cols="50">
+
+                </textarea>
+
+                </div>
+            </div>
+            <div class="recaptcha">
+                {{ recaptcha }}
+            </div>
+            <span id="sysStatus" style="font-weight: bold;">{{ status }}</span>
+            <button class='btn btn-default btn-submit'>Submit</button>
+        </form>
+
+
+        <div class="container">
+            <h2>Translation</h2>
+            <p>This table will be auto update status</p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Term (English)</th>
+                    <th style='display:none'>UID</th>
+                    <th>Status</th>
+                    <th>Translation (Spanish)</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
