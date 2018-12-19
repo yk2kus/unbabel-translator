@@ -15,6 +15,8 @@ Run Flask Server (python app.py)
       'host': 'localhost',
       'port': '5432',
     }
+  - apply migrations on DB
+    - select * from base_term;
   - run server with command
     - python app.py
   - Access server on http://127.0.0.1:5000/
